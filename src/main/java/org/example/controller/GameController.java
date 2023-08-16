@@ -4,7 +4,8 @@ import org.example.games.GameEvaluator;
 import org.example.model.Deck;
 import org.example.model.Player;
 import org.example.model.PlayingCard;
-import org.example.views.View;
+import org.example.views.CommandLineView;
+import org.example.views.GameViewable;
 
 
 import java.util.ArrayList;
@@ -14,6 +15,15 @@ import java.util.List;
 
 public class GameController {
 
+    public void nextAction(String nextChoice) {
+        if("+q".equals(nextChoice)) {
+            exitGame();
+        }
+        else {
+            startGame();
+        }
+    }
+
     enum GameState {
         AddingPlayers, CardsDealt, WinnerRevealed;
     }
@@ -21,11 +31,11 @@ public class GameController {
     Deck deck;
     List<Player> players;
     Player winner;
-    View view;
+    GameViewable view;
     GameState gameState;
     GameEvaluator evaluator;
 
-    public GameController(Deck deck, View view, GameEvaluator evaluator) {
+    public GameController(Deck deck, GameViewable view, GameEvaluator evaluator) {
         super();
         this.deck = deck;
         this.view = view;
@@ -98,6 +108,10 @@ public class GameController {
         for (Player player : players) {
             deck.returnCardToDeck(player.removeCard());
         }
+    }
+
+    void exitGame() {
+        System.exit(0);
     }
 
 }

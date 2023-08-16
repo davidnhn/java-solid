@@ -5,7 +5,7 @@ import org.example.model.PlayingCard;
 
 import java.util.List;
 
-public class LowCardGameEvaluator implements GameEvaluator{
+public class LowCardGameEvaluator implements GameEvaluator {
     @Override
     public Player evaluateWinner(List<Player> players) {
         Player bestPlayer = null;
@@ -40,4 +40,5 @@ public class LowCardGameEvaluator implements GameEvaluator{
         }
 
         return bestPlayer;
+    }
 }

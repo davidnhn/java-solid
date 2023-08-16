@@ -8,6 +8,10 @@ public class Hand {
     public Hand() {
         cards = new ArrayList<PlayingCard>();
     }
+
+    public void addCard(PlayingCard pc) {
+        cards.add(pc);
+    }
     public PlayingCard getCard(int index) {
         return  cards.get(index);
     }

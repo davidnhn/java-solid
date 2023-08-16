@@ -18,7 +18,8 @@ public class Player {
         return hand.removeCard();
     }
 
-    public void addCardToHand(PlayingCard removeTopCard) {
+    public void addCardToHand(PlayingCard pc) {
+        hand.addCard(pc);
     }
 
     public String getName() {
