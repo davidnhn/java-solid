@@ -72,3 +72,5 @@ public class GameViewables implements GameViewable {
         }
     }
 }
+
+// Le design pattern composite permet de gerer une collection d'un meme objet, il faut que la classe implemente la meme interface que l'objet
